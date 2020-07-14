@@ -1,0 +1,25 @@
+<div class="container" style="margin-left: 400px; margin-top: 100px">
+  <p>Co {{count}} cuon sach </p>
+  <br>
+  <h3><a routerLink="/book-create">Add book</a></h3>
+  <span>{{message}}</span>
+  <table style="border: 1px solid black">
+    <tr>
+      <th>ID</th>
+      <th>Ten sach</th>
+      <th>Tac Gia</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let b of books">
+      <td>{{b.id}}</td>
+      <td><a [routerLink]="['/book',b.id]">{{b.title}}</a></td>
+      <td>{{b.author}}</td>
+      <td><a [routerLink]="['book-edit', b.id]">edit</a></td>
+      <td>
+        <button (click)="deleteBook(b.id)">delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+

@@ -1,0 +1,27 @@
+<h3>{{message}}</h3>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <input type="hidden" formGroupName="id">
+  <div>
+    <label>
+      Title
+      <br>
+      <input type="text" formControlName="title">
+    </label>
+  </div>
+  <div>
+    <label>
+      Author
+      <br>
+      <input formControlName="author" type="text" >
+    </label>
+  </div>
+  <div>
+    <label>
+      Description
+      <br>
+      <input formControlName="description" type="text" >
+    </label>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
